@@ -24,7 +24,7 @@ begin
     -- next state logic
     nextState <=    unsigned(in0) when load = '1' else
                     currentState when enable = '0' else
-                    currentState + operator
+                    currentState + operator;
     
     -- internal state logic
     process(clk, rst)
