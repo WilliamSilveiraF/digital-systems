@@ -19,5 +19,5 @@ begin
                 in01 when (sel="01") else
                 in10 when (sel="10") else
                 in11 when (sel="11") else
-                others => '0';
+                (others => '0');
 end architecture;

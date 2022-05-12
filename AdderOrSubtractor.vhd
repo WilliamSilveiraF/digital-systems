@@ -29,7 +29,7 @@ begin
     -- internal state logic
     process(clk, rst)
     begin
-        if reset = '1' then
+        if rst = '1' then
             currentState <= (others => '0');
         elsif rising_edge(clk) then
             currentState <= nextState;
