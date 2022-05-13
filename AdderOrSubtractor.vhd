@@ -1,41 +1,49 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 entity AdderOrSubtractor is
-    generic(n: integer := 8);
-    port(
-        --control
-        clk, rst, enable, load, inc: in std_logic;
-
-        --uhul
-        in0: in std_logic_vector(n-1 downto 0);
-        outp: out std_logic_vector(n-1 downto 0)
+    generic(
+        n: positive := 8;
+        isAdder: boolean := false;
+        isSubtractor: boolean := true
+    );
+    port( 
+        operator: in std_logic;
+        in0, in1: in std_logic_vector(n-1 downto 0);
+        dataout: out std_logic_vector(n-1 downto 0);
+        overflow, cout : out std_logic
     );
 end entity;
 
 architecture behv of AdderOrSubtractor is
-    subtype State is unsigned(n-1 downto 0);
-    signal nextState, currentState: State;
-    signal operator: integer;
+    component FullAdder is
+        port (
+            Cin, X, Y : in std_logic;
+            sum, Cout : out std_logic
+        );
+    end component;
+    signal carry: std_logic_vector(n downto 0);
+    signal operandoIn1: std_logic_vector(n-1 downto 0);
 begin
-    operator <= 1 when inc = '1' else -1;
+    loopBit: for idx in dataout'range generate
+        fa: FullAdder port map(carry(idx), in0(idx), operandoIn1(idx), dataout(idx), carry(idx+1));
+    end generate;
 
-    -- next state logic
-    nextState <=    unsigned(in0) when load = '1' else
-                    currentState when enable = '0' else
-                    currentState + operator;
+    generateAdder: if isAdder and not isSubtractor generate
+        carry(0) <= '0';
+        operandoIn1 <= in1;
+    end generate;
+
+    generateSubtractor: if not isAdder and isSubtractor generate
+        carry(0) <= '1';
+        operandoIn1 <= not in1;
+    end generate;
+
+    generateBoth: if isAdder and isSubtractor generate
+        carry(0) <= operator;
+        operandoIn1 <= in1 when operator = '0' else not in1;
+    end generate;
     
-    -- internal state logic
-    process(clk, rst)
-    begin
-        if rst = '1' then
-            currentState <= (others => '0');
-        elsif rising_edge(clk) then
-            currentState <= nextState;
-        end if;
-    end process;
-
-    -- output logic
-    outp <= std_logic_vector(currentState);
+    cout <= carry(n);
+    overflow <= carry(n) xor carry(n-1);
 end architecture;
