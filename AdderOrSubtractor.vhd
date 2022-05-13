@@ -23,25 +23,27 @@ architecture behv of AdderOrSubtractor is
         );
     end component;
     signal carry: std_logic_vector(n downto 0);
-    signal operandoIn1: std_logic_vector(n-1 downto 0);
+    signal handleIn1: std_logic_vector(n-1 downto 0);
 begin
+    assert (isAdder or isSubtractor) report "There must be at least one operator equal to true" severity error;
+
     loopBit: for idx in dataout'range generate
-        fa: FullAdder port map(carry(idx), in0(idx), operandoIn1(idx), dataout(idx), carry(idx+1));
+        fa: FullAdder port map(carry(idx), in0(idx), handleIn1(idx), dataout(idx), carry(idx+1));
     end generate;
 
-    generateAdder: if isAdder and not isSubtractor generate
+    handleAdder: if isAdder and not isSubtractor generate
         carry(0) <= '0';
-        operandoIn1 <= in1;
+        handleIn1 <= in1;
     end generate;
 
-    generateSubtractor: if not isAdder and isSubtractor generate
+    handleSubtractor: if not isAdder and isSubtractor generate
         carry(0) <= '1';
-        operandoIn1 <= not in1;
+        handleIn1 <= not in1;
     end generate;
 
-    generateBoth: if isAdder and isSubtractor generate
+    handleBoth: if isAdder and isSubtractor generate
         carry(0) <= operator;
-        operandoIn1 <= in1 when operator = '0' else not in1;
+        handleIn1 <= in1 when operator = '0' else not in1;
     end generate;
     
     cout <= carry(n);
