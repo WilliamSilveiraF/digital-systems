@@ -11,8 +11,8 @@ entity ShiftRotator is
         isLogical: boolean := false
 	);
 	port (
-		in0: in std_logic_vector(7 downto 0);
-		out0: out std_logic_vector(7 downto 0));
+        in0: in std_logic_vector(7 downto 0);
+        out0: out std_logic_vector(7 downto 0));
 end entity;
 
 architecture Behv of ShiftRotator is
@@ -33,8 +33,8 @@ architecture Behv of ShiftRotator is
             out0 <= std_logic_vector(SHIFT_RIGHT(signed(in0), 1));
         end generate;
 
-		handleRotateLeft: if not isShifter and toleft generate
-			out0 <= std_logic_vector(ROTATE_LEFT(signed(in0), 1));
+        handleRotateLeft: if not isShifter and toleft generate
+            out0 <= std_logic_vector(ROTATE_LEFT(signed(in0), 1));
 		end generate;
 	
 		handleRotateRight: if not isShifter and toleft generate
