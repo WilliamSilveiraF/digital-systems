@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Successful - Fri Jun 10 20:28:18 2022
+Analysis & Synthesis Status : Successful - Fri Jun 10 20:41:20 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : Decoder
+Top-level Entity Name : Encoder
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 0

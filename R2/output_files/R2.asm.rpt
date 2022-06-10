@@ -1,5 +1,5 @@
 Assembler report for R2
-Fri Jun 10 20:29:11 2022
+Fri Jun 10 20:42:15 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 10 20:29:11 2022 ;
+; Assembler Status      ; Successful - Fri Jun 10 20:42:15 2022 ;
 ; Revision Name         ; R2                                    ;
-; Top-level Entity Name ; Decoder                               ;
+; Top-level Entity Name ; Encoder                               ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CEBA9F31C8                           ;
 +-----------------------+---------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-----------------+
 ; Option         ; Setting         ;
 +----------------+-----------------+
-; JTAG usercode  ; 0x01D4E933      ;
-; Checksum       ; 0x01D4E933      ;
+; JTAG usercode  ; 0x01D4E8FC      ;
+; Checksum       ; 0x01D4E8FC      ;
 +----------------+-----------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jun 10 20:29:00 2022
+    Info: Processing started: Fri Jun 10 20:42:03 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off R2 -c R2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 510 megabytes
-    Info: Processing ended: Fri Jun 10 20:29:11 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 512 megabytes
+    Info: Processing ended: Fri Jun 10 20:42:15 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
 
 

@@ -1,11 +1,11 @@
-Fitter Status : Successful - Fri Jun 10 20:28:58 2022
+Fitter Status : Successful - Fri Jun 10 20:42:02 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : Decoder
+Top-level Entity Name : Encoder
 Family : Cyclone V
 Device : 5CEBA9F31C8
 Timing Models : Final
-Logic utilization (in ALMs) : 3 / 113,560 ( < 1 % )
+Logic utilization (in ALMs) : 2 / 113,560 ( < 1 % )
 Total registers : 0
 Total pins : 6 / 480 ( 1 % )
 Total virtual pins : 0
