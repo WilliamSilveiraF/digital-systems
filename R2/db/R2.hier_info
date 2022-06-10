@@ -1,0 +1,15 @@
+|Decoder
+in00[0] => Mux0.IN5
+in00[0] => Mux1.IN5
+in00[0] => Mux2.IN5
+in00[0] => Mux3.IN5
+in00[1] => Mux0.IN4
+in00[1] => Mux1.IN4
+in00[1] => Mux2.IN4
+in00[1] => Mux3.IN4
+dataout[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
