@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Jun 10 20:42:02 2022
+Fitter Status : Successful - Fri Jun 10 21:24:13 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : Encoder
+Top-level Entity Name : PrioEncoder
 Family : Cyclone V
 Device : 5CEBA9F31C8
 Timing Models : Final
 Logic utilization (in ALMs) : 2 / 113,560 ( < 1 % )
 Total registers : 0
-Total pins : 6 / 480 ( 1 % )
+Total pins : 7 / 480 ( 1 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 12,492,800 ( 0 % )
 Total RAM Blocks : 0 / 1,220 ( 0 % )

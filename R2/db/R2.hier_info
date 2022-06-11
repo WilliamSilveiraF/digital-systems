@@ -1,13 +1,15 @@
-|Encoder
-in00[0] => Mux0.IN19
-in00[0] => Mux1.IN19
-in00[1] => Mux0.IN18
-in00[1] => Mux1.IN18
-in00[2] => Mux0.IN17
-in00[2] => Mux1.IN17
-in00[3] => Mux0.IN16
-in00[3] => Mux1.IN16
-dataout[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+|PrioEncoder
+in00[0] => isActive.IN1
+in00[1] => dataout.DATAA
+in00[1] => isActive.IN1
+in00[2] => dataout.OUTPUTSELECT
+in00[2] => dataout.DATAA
+in00[2] => isActive.IN0
+in00[3] => dataout.OUTPUTSELECT
+in00[3] => dataout.OUTPUTSELECT
+in00[3] => isActive.IN1
+isActive <= isActive.DB_MAX_OUTPUT_PORT_TYPE
+dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
 
 

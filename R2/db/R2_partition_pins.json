@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "isActive",
+					"strict" : false
+				},
+				{
 					"name" : "dataout[0]",
 					"strict" : false
 				},
