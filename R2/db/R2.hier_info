@@ -1,15 +1,27 @@
-|PrioEncoder
-in00[0] => isActive.IN1
-in00[1] => dataout.DATAA
-in00[1] => isActive.IN1
-in00[2] => dataout.OUTPUTSELECT
-in00[2] => dataout.DATAA
-in00[2] => isActive.IN0
-in00[3] => dataout.OUTPUTSELECT
-in00[3] => dataout.OUTPUTSELECT
-in00[3] => isActive.IN1
-isActive <= isActive.DB_MAX_OUTPUT_PORT_TYPE
+|bit_xor
+in00[0] => dataout.IN0
+in00[1] => dataout.IN0
+in00[2] => dataout.IN0
+in00[3] => dataout.IN0
+in00[4] => dataout.IN0
+in00[5] => dataout.IN0
+in00[6] => dataout.IN0
+in00[7] => dataout.IN0
+in01[0] => dataout.IN1
+in01[1] => dataout.IN1
+in01[2] => dataout.IN1
+in01[3] => dataout.IN1
+in01[4] => dataout.IN1
+in01[5] => dataout.IN1
+in01[6] => dataout.IN1
+in01[7] => dataout.IN1
 dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
 dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
 
 

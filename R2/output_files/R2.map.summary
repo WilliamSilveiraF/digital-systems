@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Jun 10 21:23:34 2022
+Analysis & Synthesis Status : Successful - Fri Jun 10 22:45:38 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : PrioEncoder
+Top-level Entity Name : bit_xor
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 0
-Total pins : 7
+Total pins : 24
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
