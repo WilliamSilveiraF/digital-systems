@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Jun 10 22:46:21 2022
+Fitter Status : Successful - Fri Jun 10 22:59:09 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : bit_xor
+Top-level Entity Name : reduced_xor
 Family : Cyclone V
 Device : 5CEBA9F31C8
 Timing Models : Final
-Logic utilization (in ALMs) : 5 / 113,560 ( < 1 % )
+Logic utilization (in ALMs) : 1 / 113,560 ( < 1 % )
 Total registers : 0
-Total pins : 24 / 480 ( 5 % )
+Total pins : 16 / 480 ( 3 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 12,492,800 ( 0 % )
 Total RAM Blocks : 0 / 1,220 ( 0 % )

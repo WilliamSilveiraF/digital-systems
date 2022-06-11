@@ -1,27 +1,19 @@
-|bit_xor
-in00[0] => dataout.IN0
-in00[1] => dataout.IN0
-in00[2] => dataout.IN0
-in00[3] => dataout.IN0
-in00[4] => dataout.IN0
-in00[5] => dataout.IN0
-in00[6] => dataout.IN0
-in00[7] => dataout.IN0
-in01[0] => dataout.IN1
-in01[1] => dataout.IN1
-in01[2] => dataout.IN1
-in01[3] => dataout.IN1
-in01[4] => dataout.IN1
-in01[5] => dataout.IN1
-in01[6] => dataout.IN1
-in01[7] => dataout.IN1
-dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[3] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[4] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[5] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[6] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[7] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+|reduced_xor
+in00[0] => ~NO_FANOUT~
+in00[1] => ~NO_FANOUT~
+in00[2] => ~NO_FANOUT~
+in00[3] => ~NO_FANOUT~
+in00[4] => ~NO_FANOUT~
+in00[5] => ~NO_FANOUT~
+in00[6] => ~NO_FANOUT~
+in00[7] => ~NO_FANOUT~
+dataout[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout[1].DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout[2].DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout[3].DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout[4].DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout[5].DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout[6].DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
