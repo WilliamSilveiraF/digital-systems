@@ -2,7 +2,40 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "MT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CR",
+					"strict" : false
+				},
+				{
+					"name" : "SA",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "SO",
+					"strict" : false
+				},
+				{
+					"name" : "SF",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

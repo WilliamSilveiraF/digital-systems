@@ -1,0 +1,7 @@
+
+State Machine - |GateControl|currentState
+Name currentState.IsClosed currentState.IsOpening currentState.IsOpen currentState.IsClosing 
+currentState.IsClosing 0 0 0 0 
+currentState.IsOpen 0 0 1 1 
+currentState.IsOpening 0 1 0 1 
+currentState.IsClosed 1 0 0 1 

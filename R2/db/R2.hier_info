@@ -1,19 +1,25 @@
-|reduced_xor
-in00[0] => ~NO_FANOUT~
-in00[1] => ~NO_FANOUT~
-in00[2] => ~NO_FANOUT~
-in00[3] => ~NO_FANOUT~
-in00[4] => ~NO_FANOUT~
-in00[5] => ~NO_FANOUT~
-in00[6] => ~NO_FANOUT~
-in00[7] => ~NO_FANOUT~
-dataout[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] << dataout[1].DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] << dataout[2].DB_MAX_OUTPUT_PORT_TYPE
-dataout[3] << dataout[3].DB_MAX_OUTPUT_PORT_TYPE
-dataout[4] << dataout[4].DB_MAX_OUTPUT_PORT_TYPE
-dataout[5] << dataout[5].DB_MAX_OUTPUT_PORT_TYPE
-dataout[6] << dataout[6].DB_MAX_OUTPUT_PORT_TYPE
-dataout[7] << dataout[7].DB_MAX_OUTPUT_PORT_TYPE
+|GateControl
+clk => currentState~1.DATAIN
+reset => currentState~3.DATAIN
+SA => nextState.OUTPUTSELECT
+SA => nextState.OUTPUTSELECT
+SA => nextState.OUTPUTSELECT
+SA => nextState.OUTPUTSELECT
+SF => nextState.OUTPUTSELECT
+SF => nextState.OUTPUTSELECT
+SF => nextState.OUTPUTSELECT
+SF => nextState.OUTPUTSELECT
+SO => nextState.OUTPUTSELECT
+SO => nextState.OUTPUTSELECT
+SO => nextState.OUTPUTSELECT
+SO => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+CR => nextState.OUTPUTSELECT
+MT[0] <= MT.DB_MAX_OUTPUT_PORT_TYPE
+MT[1] <= MT.DB_MAX_OUTPUT_PORT_TYPE
 
 

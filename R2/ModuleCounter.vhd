@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.math_real.all;
+use ieee.numeric_std.all;
 
 entity ModuleCounter is
 	generic(
@@ -10,13 +11,13 @@ entity ModuleCounter is
 		--control
 		clk, reset, load, enb: in std_logic;
 		--data
-		in00: in unsigned(integer(ceil(log2(real(module))))-1 downto 0);
-		dataout: out unsigned(integer(ceil(log2(real(module))))-1 downto 0));
+		in00: in std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0);
+		dataout: out std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0));
 end entity;
 
 architecture behv of ModuleCounter is
-	subtype State is unsigned(integer(ceil(log2(real(module))))-1 downto 0);
-	signal currentState, nextState: State;
+	subtype state is unsigned(integer(ceil(log2(real(module))))-1 downto 0);
+	signal currentState, nextState: state;
 begin
 	-- nextState logic
 	nextState <= 	unsigned(in00) when load='1' else 
