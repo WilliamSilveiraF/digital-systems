@@ -4,19 +4,39 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "MT[0]",
+					"name" : "dataout[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MT[1]",
+					"name" : "dataout[1]",
 					"strict" : false
 				},
 				{
-					"name" : "CR",
+					"name" : "dataout[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SA",
+					"name" : "dataout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[0]",
 					"strict" : false
 				},
 				{
@@ -28,11 +48,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "SO",
+					"name" : "enable",
 					"strict" : false
 				},
 				{
-					"name" : "SF",
+					"name" : "in00[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[7]",
 					"strict" : false
 				}
 			]

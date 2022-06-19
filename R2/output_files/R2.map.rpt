@@ -1,5 +1,5 @@
 Analysis & Synthesis report for R2
-Sun Jun 12 15:55:04 2022
+Sun Jun 19 14:14:47 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |GateControl|currentState
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |RegBitsDecor
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 12 15:55:04 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 19 14:14:47 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; R2                                          ;
-; Top-level Entity Name           ; GateControl                                 ;
+; Top-level Entity Name           ; RegBitsDecor                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4                                           ;
-; Total pins                      ; 8                                           ;
+; Total registers                 ; 8                                           ;
+; Total pins                      ; 19                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -71,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA9F31C8        ;                    ;
-; Top-level entity name                                                           ; GateControl        ; R2                 ;
+; Top-level entity name                                                           ; RegBitsDecor       ; R2                 ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -161,72 +160,57 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; GateControl.vhd                  ; yes             ; User VHDL File  ; /home/driox/Documents/VSCODE/digital-systems/R2/GateControl.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; RegBitsDecor.vhd                 ; yes             ; User VHDL File  ; /home/driox/Documents/VSCODE/digital-systems/R2/RegBitsDecor.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5                   ;
-;                                             ;                     ;
-; Combinational ALUT usage for logic          ; 8                   ;
-;     -- 7 input functions                    ; 0                   ;
-;     -- 6 input functions                    ; 1                   ;
-;     -- 5 input functions                    ; 2                   ;
-;     -- 4 input functions                    ; 2                   ;
-;     -- <=3 input functions                  ; 3                   ;
-;                                             ;                     ;
-; Dedicated logic registers                   ; 4                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 8                   ;
-;                                             ;                     ;
-; Total DSP Blocks                            ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; currentState.IsOpen ;
-; Maximum fan-out                             ; 5                   ;
-; Total fan-out                               ; 52                  ;
-; Average fan-out                             ; 1.86                ;
-+---------------------------------------------+---------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 4         ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 0         ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 0         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 8         ;
+;                                             ;           ;
+; I/O pins                                    ; 19        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 8         ;
+; Total fan-out                               ; 59        ;
+; Average fan-out                             ; 1.28      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |GateControl               ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 8    ; 0            ; |GateControl        ; GateControl ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; |RegBitsDecor              ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 19   ; 0            ; |RegBitsDecor       ; RegBitsDecor ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |GateControl|currentState                                                                              ;
-+------------------------+-----------------------+------------------------+---------------------+------------------------+
-; Name                   ; currentState.IsClosed ; currentState.IsOpening ; currentState.IsOpen ; currentState.IsClosing ;
-+------------------------+-----------------------+------------------------+---------------------+------------------------+
-; currentState.IsClosing ; 0                     ; 0                      ; 0                   ; 0                      ;
-; currentState.IsOpen    ; 0                     ; 0                      ; 1                   ; 1                      ;
-; currentState.IsOpening ; 0                     ; 1                      ; 0                   ; 1                      ;
-; currentState.IsClosed  ; 1                     ; 0                      ; 0                   ; 1                      ;
-+------------------------+-----------------------+------------------------+---------------------+------------------------+
 
 
 +------------------------------------------------------+
@@ -234,45 +218,40 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |GateControl|Selector1     ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |GateControl|Selector2     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RegBitsDecor ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; width          ; 8     ; Signed Integer                                      ;
+; resetValue     ; 0     ; Signed Integer                                      ;
+; thereIsEnable  ; true  ; Enumerated                                          ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     CLR               ; 4                           ;
-; arriav_lcell_comb     ; 10                          ;
-;     normal            ; 10                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 3                           ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 2                           ;
-;         6 data inputs ; 1                           ;
-; boundary_port         ; 8                           ;
-;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.55                        ;
-+-----------------------+-----------------------------+
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; arriav_ff         ; 8                               ;
+;     ENA CLR       ; 8                               ;
+; boundary_port     ; 19                              ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
 
 
 +-------------------------------+
@@ -290,7 +269,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sun Jun 12 15:54:55 2022
+    Info: Processing started: Sun Jun 19 14:14:38 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off R2 -c R2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -308,23 +287,27 @@ Info (12021): Found 2 design units, including 1 entities, in source file reduced
 Info (12021): Found 2 design units, including 1 entities, in source file registerN.vhd
     Info (12022): Found design unit 1: registerN-behv File: /home/driox/Documents/VSCODE/digital-systems/R2/registerN.vhd Line: 15
     Info (12023): Found entity 1: registerN File: /home/driox/Documents/VSCODE/digital-systems/R2/registerN.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ModuleCounter.vhd
-    Info (12022): Found design unit 1: ModuleCounter-behv File: /home/driox/Documents/VSCODE/digital-systems/R2/ModuleCounter.vhd Line: 18
-    Info (12023): Found entity 1: ModuleCounter File: /home/driox/Documents/VSCODE/digital-systems/R2/ModuleCounter.vhd Line: 6
+Warning (12019): Can't analyze file -- file ModuleCounter.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file GateControl.vhd
     Info (12022): Found design unit 1: GateControl-behv File: /home/driox/Documents/VSCODE/digital-systems/R2/GateControl.vhd Line: 13
     Info (12023): Found entity 1: GateControl File: /home/driox/Documents/VSCODE/digital-systems/R2/GateControl.vhd Line: 4
-Info (12127): Elaborating entity "GateControl" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file RegBits.vhd
+    Info (12022): Found design unit 1: RegBits-behv File: /home/driox/Documents/VSCODE/digital-systems/R2/RegBits.vhd Line: 15
+    Info (12023): Found entity 1: RegBits File: /home/driox/Documents/VSCODE/digital-systems/R2/RegBits.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file RegBitsDecor.vhd
+    Info (12022): Found design unit 1: RegBitsDecor-behv File: /home/driox/Documents/VSCODE/digital-systems/R2/RegBitsDecor.vhd Line: 16
+    Info (12023): Found entity 1: RegBitsDecor File: /home/driox/Documents/VSCODE/digital-systems/R2/RegBitsDecor.vhd Line: 5
+Info (12127): Elaborating entity "RegBitsDecor" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 2 output pins
+Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 8 output pins
     Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 528 megabytes
-    Info: Processing ended: Sun Jun 12 15:55:04 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 503 megabytes
+    Info: Processing ended: Sun Jun 19 14:14:47 2022
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:23
 
