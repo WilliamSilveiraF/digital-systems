@@ -1,38 +1,37 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 use ieee.math_real.all;
 
-entity ModuleCounter is
+entity ModuleCounterDecor is
 	generic(
-		module: integer := 60;
-		resetValue: integer := 0);
-	port (
-		--control
-		clk, reset, load, enb: in std_logic;
-		--data
-		in00: in unsigned(integer(ceil(log2(real(module))))-1 downto 0);
-		dataout: out unsigned(integer(ceil(log2(real(module))))-1 downto 0));
+		module: positive := 60;
+		rstValue: integer := 0);
+	port(
+		clk, enable, load, rst: in std_logic; 
+		in00: in std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0);
+		dataout: out std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0));
 end entity;
 
-architecture behv of ModuleCounter is
-	subtype State is unsigned(integer(ceil(log2(real(module))))-1 downto 0);
-	signal currentState, nextState: State;
+architecture behv of ModuleCounterDecor is
+	subtype state is unsigned(integer(ceil(log2(real(module))))-1 downto 0);
+	signal currentState, nextState: state;
 begin
 	-- nextState logic
-	nextState <= 	unsigned(in00) when load='1' else 
-						currentState when enb='0' else
-						to_unsigned(0, currentState'length) when currentState=module-1 else currentState+ 1;
-
-	-- internal state logic
-	process(reset, clk)
+	nextState <= unsigned(in00) when load='1' else
+					 currentState when enable='0' else
+					 to_unsigned(0, nextState'length) when currentState=module-1 else
+					 currentState+1;
+	-- internal logic
+	process(clk, rst)
 	begin
-		if (reset='1') then
-			currentState <= to_unsigned(resetValue, currentState'length);
+		if (rst='1') then
+			currentState <= to_unsigned(rstValue, currentState'length);
 		elsif (rising_edge(clk)) then
 			currentState <= nextState;
 		end if;
 	end process;
-
+	
 	-- output logic
 	dataout <= std_logic_vector(currentState);
 end architecture;
