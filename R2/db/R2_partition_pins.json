@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "outFromLeft",
+					"strict" : false
+				},
+				{
+					"name" : "outFromRight",
+					"strict" : false
+				},
+				{
 					"name" : "dataout[0]",
 					"strict" : false
 				},
@@ -28,7 +36,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "inc",
+					"name" : "dataout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "op",
 					"strict" : false
 				},
 				{
@@ -36,7 +52,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "in00[0]",
+					"name" : "enable",
 					"strict" : false
 				},
 				{
@@ -44,11 +60,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "enb",
+					"name" : "in00[0]",
+					"strict" : false
+				},
+				{
+					"name" : "inpFromRight",
 					"strict" : false
 				},
 				{
@@ -69,6 +89,18 @@
 				},
 				{
 					"name" : "in00[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in00[7]",
+					"strict" : false
+				},
+				{
+					"name" : "inpFromLeft",
 					"strict" : false
 				}
 			]
