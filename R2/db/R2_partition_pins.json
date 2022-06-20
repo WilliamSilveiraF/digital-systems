@@ -28,6 +28,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "inc",
+					"strict" : false
+				},
+				{
 					"name" : "load",
 					"strict" : false
 				},
@@ -44,7 +48,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "enable",
+					"name" : "enb",
 					"strict" : false
 				},
 				{

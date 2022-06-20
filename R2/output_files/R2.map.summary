@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun Jun 19 15:48:27 2022
+Analysis & Synthesis Status : Successful - Mon Jun 20 09:51:35 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : ModuleCounterDecor
+Top-level Entity Name : ModuleCounterEnbInc
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 6
-Total pins : 16
+Total pins : 17
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

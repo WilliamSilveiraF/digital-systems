@@ -1,0 +1,48 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+entity ModuleCounterEnbInc is
+	generic(
+		module: positive := 60;
+		resetValue: integer := 0;
+		thereIsEnable: boolean := true
+		thereIsIncDec: boolean := true);
+	port(
+		clk, rst, enb, inc, load: in std_logic;
+		in00: in std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0);
+		dataout: out std_logic_vector(integer(ceil(log2(real(module))))-1 downto 0));
+end entity;
+
+architecture behv of ModuleCounterEnbInc is
+	subtype state is unsigned(integer(ceil(log2(real(module))))-1 downto 0);
+	signal currentState, nextState: state;
+	signal operator: integer;
+begin
+	-- nextState logic
+	flagThereIsEnable: if thereIsEnable and thereIsIncDec generate
+		
+		operator <= 1 when inc='1' else -1;
+		nextState <= unsigned(in00) when load='1' else
+						 currentState when enb='0' else
+						 to_unsigned(0, nextState'length) when inc='1' and module-1=currentState else
+						 to_unsigned(module-1, nextState'length) when inc='0' and module=0 else
+						 currentState+operator;
+	end generate;
+	
+	flagThereIsEnableAndThereIsntIncDec: if thereIsEnable and not thereIsIncDec generate
+	end generate;
+	
+	-- internal logic
+	process(clk, rst)
+	begin
+		if (rst='1') then
+			currentState <= to_unsigned(resetValue, currentState'length);
+		elsif (rising_edge(clk)) then
+			currentState <= nextState;
+		end if;
+	end process;
+	
+	dataout <= currentState;
+end architecture;
