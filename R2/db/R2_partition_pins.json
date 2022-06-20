@@ -4,14 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "outFromLeft",
-					"strict" : false
-				},
-				{
-					"name" : "outFromRight",
-					"strict" : false
-				},
-				{
 					"name" : "dataout[0]",
 					"strict" : false
 				},
@@ -44,7 +36,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "op",
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "in00[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
 					"strict" : false
 				},
 				{
@@ -56,23 +56,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
 					"name" : "in00[0]",
-					"strict" : false
-				},
-				{
-					"name" : "inpFromRight",
-					"strict" : false
-				},
-				{
-					"name" : "in00[1]",
 					"strict" : false
 				},
 				{
@@ -97,10 +81,6 @@
 				},
 				{
 					"name" : "in00[7]",
-					"strict" : false
-				},
-				{
-					"name" : "inpFromLeft",
 					"strict" : false
 				}
 			]

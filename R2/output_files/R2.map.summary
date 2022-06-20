@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Jun 20 12:47:58 2022
+Analysis & Synthesis Status : Successful - Mon Jun 20 13:56:13 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : R2
-Top-level Entity Name : shiftRegister
+Top-level Entity Name : grayCounter
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 10
-Total pins : 25
+Total registers : 8
+Total pins : 20
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
